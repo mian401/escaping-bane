@@ -3,8 +3,8 @@ const mosnter = document.getElementById('monster')
 const over = document.getElementById('over')
 const scorebox = document.getElementById("score")
 
-const bgsound = new Audio('/sounds/bg.mp3')
-const oversound = new Audio('/sounds/over.mp3')
+const bgsound = new Audio('sounds/bg.mp3')
+const oversound = new Audio('sounds/over.mp3')
 
 
 let score = 0;
