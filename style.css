@@ -85,7 +85,7 @@
     width: 100%;
     height: 100vh;
 
-    background: url(/images/bg-1.jpg) no-repeat;
+    background: url(images/bg-1.jpg) no-repeat;
     /* background: url(/images/bg-2.jpg) no-repeat; */
 
     position: relative;
@@ -100,7 +100,7 @@
 #character{
 
     /* background: url(/images/character-1.png) no-repeat; */
-    background: url(/images/character-2.png) no-repeat;
+    background: url(images/character-2.png) no-repeat;
     background-size: cover;
 
     /* charavter-1 */
@@ -121,7 +121,7 @@
 
 #monster{
 
-    background: url(/images/monster.png) no-repeat;
+    background: url(images/monster.png) no-repeat;
     background-size: cover;
 
     width: 120px;
