@@ -14,7 +14,7 @@
 
 #over{
 
-    visibility: hidden;
+    /* visibility: hidden; */
 
     position: absolute;
     top: 50%;
