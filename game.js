@@ -3,8 +3,20 @@ const mosnter = document.getElementById('monster')
 const over = document.getElementById('over')
 const scorebox = document.getElementById("score")
 
+const bgsound = new Audio('/sounds/bg.mp3')
+const oversound = new Audio('/sounds/over.mp3')
+
+
 let score = 0;
+let hscore = 0;
 let cross = true;
+
+
+
+setTimeout(() => {
+
+    bgsound.play();
+}, 100);
 
 document.onkeydown = function (key) {
 
@@ -51,36 +63,54 @@ setInterval(() => {
     let offsety = Math.abs(cy - my);
 
 
-    if (offsetx < 75 && offsety < 52) {
+    if (offsetx < 75 && offsety < 75) {
 
         //Comparing Position of character and monster to estimmate collision
 
         over.style.visibility = 'visible';
         mosnter.classList.remove('monster-ani')
+
+        oversound.play();
+        
+        
+        setTimeout(() => {
+
+            oversound.pause();
+            bgsound.pause();
+        }, 1000);
     }
 
-    else if(offsetx < 145 && cross) {
+    else if (offsetx < 145 && cross) {
 
-        score+=1;
+        score += 1;
         updatescore(score);
+
         cross = false;
         setTimeout(() => {
             cross = true;
         }, 1000)
-        
+
         setTimeout(() => {
-            
+
             let monsterdur = parseFloat(window.getComputedStyle(monster, null).getPropertyValue('animation-duration'));
-            let newdur = (monsterdur - 0.1) + "s" ;
+            let newdur = (monsterdur - 0.1) + "s";
             mosnter.style.animationDuration = newdur;
 
         }, 1000)
     }
 
+    if (score > hscore) {
+    
+        hscore = score;
+        document.getElementById('hscore').innerHTML = hscore;
+    }
+    
+
 }, 100)
 
+
 function updatescore(s) {
-    
+
     scorebox.innerHTML = s;
 }
 
